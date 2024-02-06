@@ -1,0 +1,21 @@
+{% include 'header.html' %}
+<form method="Post">
+    {%csrf_token%}
+
+<div style="text-align: center;"s>
+<h1 >Login</h1><br><br>
+<table align='center' style="color: red;">
+    <tr><th>
+    {% if messages %}
+<ul class="messages">
+{% for message in messages %}
+<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+{% endfor %}
+</ul>{% endif %}</th></tr></table>
+
+<input type="email"  name='email' placeholder="write your Email" required><br><br>
+<input type="password"  name='pwd' placeholder='write  Password' required><br><br>
+
+<input type="submit"><input type="reset">
+</div>
+</form>
